@@ -39,7 +39,7 @@ public class ManageBrowser {
             System.out.println("Wrong browser name");
         }
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get(baseUrl);
     }
 
