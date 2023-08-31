@@ -18,10 +18,19 @@ public class HomePage extends Utility {
     @FindBy(xpath = "//ul[@class='clearfix header-items']//span[@class='login'][normalize-space()='Log In']")
     WebElement loginLink;
 
-    public String logoIsVisible(){
-        String logo = getTextFromElement(baLogo);
-        log.info("Logo is Visible");
-        return logo;
+    @CacheLookup
+    @FindBy(xpath = "//button[@id='ensCloseBanner']")
+    //@FindBy(xpath = "//button[@id='ensCloseBanner']")
+    WebElement acceptCookies;
 
+    public void logoIsVisible(){
+//        getTextFromElement(baLogo);
+        log.info("Logo is Visible");
+        baLogo.isDisplayed();
+    }
+
+    public void setAcceptCookies(){
+        log.info("Accept Cookies");
+        clickOnElement(acceptCookies);
     }
 }
